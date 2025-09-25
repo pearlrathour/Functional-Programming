@@ -6,10 +6,15 @@ import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
 public class FunctionalInterfaces {
+
+    // Custom Functional Interface
+    @FunctionalInterface
+    interface MyFunction {
+        int apply(int x);
+    }
+
     public static void main(String[] args) {
         List<Integer> num= List.of(6,3,4,7);
-
-        // lambda functiona s object (1st class citizen in Java)
 
         // Predicate: boolean function (Condition checking)
         // BiPredicate -> 2 input
@@ -32,6 +37,9 @@ public class FunctionalInterfaces {
             .forEach(soutConsumer);
 
         System.out.println(randomIntegerSupplier.get());
+
+        MyFunction square = n -> n * n;
+        System.out.println(square.apply(5));
 
     }
 }

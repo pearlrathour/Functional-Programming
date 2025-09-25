@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Main {
+public class FunctionalPrint {
     public static void main(String[] args) {
         printAllNumberInListFunc(List.of(12,9,3));
         printSquaresofEvenNumbers(List.of(12,3,9));
@@ -17,19 +17,11 @@ public class Main {
     private static void printAllNumberInListFunc(List<Integer> numbers) {
 
         numbers.stream()
-            .forEach(Main::print);  // Method ref
-
-        System.out.println();
-
-        numbers.stream()
-            .filter(Main::isEven)
-            .forEach(System.out::println);
-
-        System.out.println();
+            .filter(FunctionalPrint::isEven)
+            .forEach(FunctionalPrint::print); // Method reference
     
-        // Lambda expression
         numbers.stream()
-            .filter(n->n%2==0)
+            .filter(n->n%2==0)  // lambda expression
             .forEach(System.out::println);
     }
 
