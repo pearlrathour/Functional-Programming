@@ -57,7 +57,8 @@ List<String> names = List.of("Alice", "Bob", "Ankit", "Charlie");
 List<String> result = names.stream()
     .filter(n -> n.startsWith("A"))  // Lambda
     .map(String::toUpperCase)        // Method reference
-    .toList(); ```
+    .toList(); 
+```
 
 ## Functional Interfaces
 
